@@ -51,7 +51,10 @@
     position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);
     backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
   }
-  .navbar{display:flex;align-items:center;gap:16px;padding:13px 0}
+  /* NEVER use the `padding` shorthand on an element that also carries .wrap —
+     it resets padding-left/right to 0 and the content goes flush to the screen
+     edge. This element is class="wrap navbar". Top/bottom longhand only. */
+  .navbar{display:flex;align-items:center;gap:16px;padding-top:13px;padding-bottom:13px}
   .logo{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em;line-height:1.1}
   .logo em{font-style:normal;color:var(--grass)}
   /* min-height 44px: below that a phone tap target is unreliable, and this is
@@ -64,7 +67,8 @@
   .navbar .call:hover{background:var(--grass-deep)}
 
   /* ---------- hero ---------- */
-  .hero{padding:clamp(52px,10vw,96px) 0 clamp(44px,8vw,72px);border-bottom:1px solid var(--line)}
+  /* class="wrap hero" — top/bottom longhand only, see the note on .navbar */
+  .hero{padding-top:clamp(52px,10vw,96px);padding-bottom:clamp(44px,8vw,72px);border-bottom:1px solid var(--line)}
   .eyebrow{
     font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
     color:var(--grass-deep);margin-bottom:18px;
@@ -175,7 +179,7 @@
     /* the navbar was the overflow culprit: a 19px logo plus a nowrap phone
        button exceeded the viewport and widened the whole document */
     .logo{font-size:16px;letter-spacing:-.02em}
-    .navbar{gap:10px;padding:10px 0}
+    .navbar{gap:10px;padding-top:10px;padding-bottom:10px}
     .navbar .call{padding:11px 14px;font-size:14px}
     .navbar .call .word{display:none}
     /* the banner + header already eat ~100px of a 844px screen; don't let the
