@@ -51,7 +51,10 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{padding:clamp(66px,13vw,132px) 0 clamp(56px,10vw,104px);position:relative;z-index:1}
+  /* class="wrap hero" — the `padding` shorthand here would reset .wrap's
+     padding-left/right to 0 and push every word flush to the screen edge.
+     Top/bottom longhand only, always. */
+  .hero{padding-top:clamp(66px,13vw,132px);padding-bottom:clamp(56px,10vw,104px);position:relative;z-index:1}
   .name{
     font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.34em;
     text-transform:uppercase;color:var(--amber);margin-bottom:26px;
