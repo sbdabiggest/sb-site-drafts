@@ -29,9 +29,11 @@
   .wrap{max-width:980px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
   h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
 
+  /* one line at 390px — a wrapped banner puts a second dense bar above the
+     fold before the visitor has seen anything. Attribution lives in the footer. */
   .draft{
     background:#000;color:var(--dim);text-align:center;font-size:11px;
-    letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;font-weight:700;line-height:1.4;
   }
 
   /* botanical motif — soft light through leaves, drawn not photographed */
@@ -79,7 +81,7 @@
   /* ---------- sections ---------- */
   section{padding:clamp(58px,9vw,104px) 0}
   .lab{
-    font-family:var(--body);font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+    font-family:var(--body);font-size:13px;letter-spacing:.24em;text-transform:uppercase;
     color:var(--amber);margin-bottom:20px;
   }
   h2{font-size:clamp(32px,5.4vw,52px)}
@@ -130,7 +132,7 @@
 </head>
 <body>
 
-<div class="draft">Free draft preview — built for Rocco Elliot · not a live site</div>
+<div class="draft">Draft preview · not a live site</div>
 
 <div class="canopy">
   <svg class="frond" viewBox="0 0 300 300" aria-hidden="true">
@@ -221,6 +223,7 @@
   <div class="wrap">
     <p class="sig">Just Me &amp; My Plants</p>
     <p style="margin-top:8px">© 2026 Rocco Elliot</p>
+    <p style="margin-top:6px;opacity:.7">Draft preview built for Rocco Elliot by SB</p>
   </div>
 </footer>
 
