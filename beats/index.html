@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soberbby Beats — Hurricane Wisdom &amp; Florida melodic pain type beats</title>
+<meta name="description" content="Type beats by Soberbby (Destin, FL). Hurricane Wisdom, Loe Shimmy, Skrilla-style melodic pain beats. Free for non-profit with credit; instant licenses from $29.99.">
+<meta property="og:title" content="Soberbby Beats">
+<meta property="og:description" content="Florida melodic pain type beats. Instant licenses from $29.99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  /* Soberbby brand system — same tokens as soberbby-site */
+  :root{ --deep:#04100D; --deeper:#020806; --surface:#0A1F1A; --surface-2:#0D2620; --emerald:#2BD9A4; --emerald-deep:#0E7C5C; --sand:#E9DFC8; --sand-dim:#8FA098; --line:rgba(233,223,200,.13);
+         --font-body:"Archivo","Helvetica Neue",sans-serif; --font-display:"Big Shoulders Display","Arial Narrow",sans-serif; --font-mono:"Space Mono","Courier New",monospace; --pad:clamp(18px,5vw,56px); }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--deep);color:var(--sand);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--emerald)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad)}
+  header.top{position:sticky;top:0;z-index:5;background:rgba(4,16,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--sand)}
+  .sb{width:36px;height:36px;border:2px solid var(--emerald);border-radius:9px;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--emerald)}
+  .brand{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:.06em;text-transform:uppercase}
+  .brand b{color:var(--emerald)}
+  nav a{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand-dim);text-decoration:none;margin-left:18px}
+  nav a:hover{color:var(--sand)}
+  .hero{padding:72px 0 40px;background:radial-gradient(900px 500px at 80% 0%,rgba(43,217,164,.16),transparent 60%)}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald)}
+  h1{font-family:var(--font-display);font-weight:900;font-size:clamp(56px,11vw,132px);line-height:.9;letter-spacing:-.01em;text-transform:uppercase;margin:12px 0 18px;text-wrap:balance}
+  h1 b{color:var(--emerald)}
+  .lede{max-width:62ch;color:var(--sand-dim);font-size:17px}
+  .lede b{color:var(--sand)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--sand);font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+  .btn.primary{background:var(--emerald);border-color:var(--emerald);color:var(--deeper);font-weight:700}
+  .btn:hover{filter:brightness(1.08)}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:26px 0 8px}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .tier .n{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-dim)}
+  .tier .p{font-family:var(--font-display);font-weight:900;font-size:44px;line-height:1;margin:6px 0 8px}
+  .tier ul{margin:0;padding-left:18px;color:var(--sand-dim);font-size:14px}
+  .tier.hi{border-color:var(--emerald);box-shadow:0 0 0 1px rgba(43,217,164,.25) inset}
+  .sec{padding:44px 0 10px}
+  h2{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,6vw,56px);letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px}
+  .sub{color:var(--sand-dim);margin:0 0 22px;max-width:70ch}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+  .toolbar input{flex:1;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--sand);font:inherit}
+  .count{font-family:var(--font-mono);font-size:12px;color:var(--sand-dim);letter-spacing:.1em;text-transform:uppercase}
+  .beat{display:grid;grid-template-columns:120px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px;scroll-margin-top:84px}
+  .beat img{width:120px;height:120px;object-fit:cover;border-radius:12px;background:var(--surface-2)}
+  .beat .t{font-family:var(--font-display);font-weight:800;font-size:30px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+  .beat .m{font-family:var(--font-mono);font-size:12px;color:var(--sand-dim);letter-spacing:.08em;text-transform:uppercase;margin:6px 0 10px}
+  .player{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .play{width:40px;height:40px;border-radius:50%;border:0;background:var(--emerald);color:var(--deeper);font-size:16px;cursor:pointer;display:grid;place-items:center;flex:none}
+  .bar{flex:1;height:6px;background:var(--surface-2);border-radius:6px;overflow:hidden;cursor:pointer}
+  .bar i{display:block;height:100%;width:0;background:var(--emerald)}
+  .time{font-family:var(--font-mono);font-size:12px;color:var(--sand-dim);min-width:84px;text-align:right}
+  .buy{display:flex;flex-wrap:wrap;gap:8px}
+  .buy .btn{padding:9px 12px;font-size:12px}
+  .buy .btn[disabled]{opacity:.4;cursor:not-allowed}
+  .empty{background:var(--surface);border:1px dashed var(--line);border-radius:18px;padding:28px;color:var(--sand-dim);text-align:center}
+  .faq details{border-top:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:600;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{color:var(--sand-dim);margin:8px 0 0;max-width:70ch}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 60px;color:var(--sand-dim);font-size:14px}
+  footer .row{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);padding:12px 16px;border-radius:12px;font-size:14px;display:none;z-index:9}
+  @media (max-width:560px){ .beat{grid-template-columns:1fr} .beat img{width:100%;height:auto;aspect-ratio:16/9} nav{display:none} }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="#"><span class="sb">SB</span><span class="brand">Soberbby <b>Beats</b></span></a>
+  <nav><a href="#beats">Beats</a><a href="#licenses">Licenses</a><a href="#faq">FAQ</a><a href="https://instagram.com/SBdabiggest" target="_blank" rel="noopener">Instagram</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">Destin, Florida · 850 · prod. Soberbby</div>
+  <h1>Florida <b>pain</b><br>type beats</h1>
+  <p class="lede">Hurricane Wisdom, Loe Shimmy and Skrilla-lane melodic beats, made by an artist who records in this exact sound. <b>Free for non-profit use with credit.</b> To release it, grab a license below — untagged files and the agreement land in your inbox instantly.</p>
+  <div class="cta-row"><a class="btn primary" href="#beats">▶ Browse beats</a><a class="btn" href="#licenses">How licensing works</a></div>
+</div></section>
+
+<section class="sec" id="licenses"><div class="wrap">
+  <h2>Licenses</h2>
+  <p class="sub">Same three tiers on every beat. Non-exclusive, instant download, one agreement PDF per order. Exclusive rights are negotiated by DM.</p>
+  <div class="tiers" id="tiers"></div>
+  <p class="sub" style="font-family:var(--font-mono);font-size:12px;letter-spacing:.06em">Exclusive (beat comes off the store, full ownership transfer) from $299 — DM <a href="https://instagram.com/SBdabiggest" target="_blank" rel="noopener">@SBdabiggest</a>.</p>
+</div></section>
+
+<section class="sec" id="beats"><div class="wrap">
+  <h2>Beats</h2>
+  <p class="sub">Every preview is tagged. Purchases are untagged. Newest first.</p>
+  <div class="toolbar"><input id="q" type="search" placeholder="Search title, BPM, key, artist lane…" aria-label="Search beats"><span class="count" id="count"></span></div>
+  <div id="list"><div class="empty">Loading the catalog…</div></div>
+</div></section>
+
+<section class="sec faq" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <details open><summary>Can I use a beat for free?</summary><p>Yes, for non-profit use only: SoundCloud, YouTube without monetization, freestyles, demos. Credit “(prod. Soberbby)” in the title. The free file keeps the voice tag. To put a song on Spotify, Apple Music or a monetized channel, you need a license.</p></details>
+  <details><summary>What do I get after I pay?</summary><p>An instant download page with the untagged files for your tier plus the license agreement PDF with your name, the beat, and the order number. Links stay live for an hour; the email receipt from Stripe has the order id if you need them re-issued.</p></details>
+  <details><summary>Is a lease exclusive?</summary><p>No. Leases are non-exclusive — the same beat can be licensed to other artists. Exclusive rights remove the beat from the store and transfer it to you; message @SBdabiggest for that.</p></details>
+  <details><summary>Refunds?</summary><p>Digital files can’t be returned, so all sales are final. If a download fails, message @SBdabiggest with your order id and it gets fixed the same day.</p></details>
+  <details><summary>Who makes these?</summary><p>Soberbby — an artist and engineer from Destin, Florida who records, mixes and masters in this lane. Every beat here is the kind of beat he would write to himself.</p></details>
+</div></section>
+
+<footer><div class="wrap"><div class="row">
+  <div>© <span id="year"></span> Soberbby Beats · Destin, FL</div>
+  <div><a href="https://instagram.com/SBdabiggest" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@soberbby" target="_blank" rel="noopener">TikTok</a> · <a href="https://open.spotify.com/artist/3r9ekqqPpnD6QkaVnHWXSV" target="_blank" rel="noopener">Spotify</a></div>
+</div></div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  // ---- CONFIG (edit here, never in markup) ----
+  var CHECKOUT_FN = 'https://joaqxkymryeggcxfnius.supabase.co/functions/v1/beats-checkout';
+  var TIERS = {
+    mp3:       { name:'MP3 Lease',       price:29.99, points:['Untagged MP3','10,000 streams','1 music video','Non-exclusive'] },
+    wav:       { name:'WAV Lease',       price:49.99, points:['Untagged WAV + MP3','100,000 streams','1 music video','Non-exclusive'], hi:true },
+    unlimited: { name:'Unlimited Lease', price:99,    points:['WAV + MP3 + stems*','Unlimited streams','Unlimited videos','Non-exclusive'] }
+  };
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var $ = function(s, el){ return (el||document).querySelector(s); };
+  var toast = function(m){ var t=$('#toast'); t.textContent=m; t.style.display='block'; clearTimeout(t._h); t._h=setTimeout(function(){t.style.display='none';},3200); };
+
+  // tiers block
+  $('#tiers').innerHTML = Object.keys(TIERS).map(function(k){ var t=TIERS[k]; return '<div class="tier'+(t.hi?' hi':'')+'"><div class="n">'+t.name+'</div><div class="p">$'+t.price+'</div><ul>'+t.points.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul></div>'; }).join('')
+    + '<div class="tier" style="opacity:.8"><div class="n">Exclusive</div><div class="p">$299+</div><ul><li>Full ownership transfer</li><li>Beat removed from store</li><li>Contract by DM</li></ul></div>';
+
+  var beats = [], current = null;
+  function fmt(s){ s=Math.max(0,Math.round(s||0)); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+  function render(){
+    var q = ($('#q').value||'').toLowerCase().trim();
+    var rows = beats.filter(function(b){ return !q || (b.title+' '+b.bpm+' '+b.key+' '+(b.niche||'')).toLowerCase().indexOf(q) > -1; });
+    $('#count').textContent = rows.length + (rows.length===1?' beat':' beats');
+    if (!rows.length) { $('#list').innerHTML = '<div class="empty">'+(beats.length?'Nothing matches that search.':'First drop lands soon — follow @SBdabiggest for the drop.')+'</div>'; return; }
+    $('#list').innerHTML = rows.map(function(b){
+      var buy = Object.keys(TIERS).map(function(k){ var dis = (k==='wav'||k==='unlimited') && !b.has_wav; return '<button class="btn'+(k==='wav'?' primary':'')+'" data-buy="'+b.slug+'" data-tier="'+k+'"'+(dis?' disabled title="WAV not available for this beat"':'')+'>'+TIERS[k].name+' · $'+TIERS[k].price+'</button>'; }).join('');
+      return '<article class="beat" id="'+b.slug+'"><img src="'+b.cover+'" alt="" loading="lazy"><div>'
+        + '<div class="t">'+b.title+'</div><div class="m">'+b.bpm+' BPM · '+b.key+' · '+(b.niche||'')+' type beat · '+fmt(b.duration)+'</div>'
+        + '<div class="player"><button class="play" data-play="'+b.slug+'" aria-label="Play">▶</button><div class="bar" data-bar="'+b.slug+'"><i></i></div><div class="time" data-time="'+b.slug+'">0:00 / '+fmt(b.duration)+'</div></div>'
+        + '<div class="buy">'+buy+'</div></div></article>';
+    }).join('');
+  }
+  // one shared <audio>
+  var audio = new Audio(); audio.preload = 'none';
+  function play(slug){
+    var b = beats.filter(function(x){return x.slug===slug;})[0]; if(!b) return;
+    if (current===slug) { if (audio.paused) audio.play(); else audio.pause(); return; }
+    if (current) { var pb=$('[data-play="'+current+'"]'); if(pb) pb.textContent='▶'; }
+    current = slug; audio.src = b.preview; audio.play();
+  }
+  audio.addEventListener('play', function(){ var pb=$('[data-play="'+current+'"]'); if(pb) pb.textContent='❚❚'; });
+  audio.addEventListener('pause', function(){ var pb=$('[data-play="'+current+'"]'); if(pb) pb.textContent='▶'; });
+  audio.addEventListener('timeupdate', function(){ if(!current) return; var bar=$('[data-bar="'+current+'"] i'), tm=$('[data-time="'+current+'"]'); if(bar&&audio.duration) bar.style.width=(audio.currentTime/audio.duration*100)+'%'; if(tm) tm.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration||0); });
+  audio.addEventListener('ended', function(){ var i=beats.findIndex(function(x){return x.slug===current;}); if (i>-1 && beats[i+1]) play(beats[i+1].slug); });
+  document.addEventListener('click', function(e){
+    var p = e.target.closest('[data-play]'); if (p) return play(p.getAttribute('data-play'));
+    var bar = e.target.closest('[data-bar]'); if (bar && bar.getAttribute('data-bar')===current && audio.duration) { var r=bar.getBoundingClientRect(); audio.currentTime = (e.clientX-r.left)/r.width*audio.duration; return; }
+    var buy = e.target.closest('[data-buy]'); if (buy && !buy.disabled) return checkout(buy.getAttribute('data-buy'), buy.getAttribute('data-tier'), buy);
+  });
+  function checkout(slug, tier, btn){
+    var old = btn.textContent; btn.textContent = 'Opening checkout…'; btn.disabled = true;
+    fetch(CHECKOUT_FN, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ beat: slug, tier: tier }) })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(x){ if (x.ok && x.j.url) { location.href = x.j.url; } else { throw new Error(x.j.error || 'checkout unavailable'); } })
+      .catch(function(err){ toast('Checkout: ' + err.message + ' — DM @SBdabiggest'); btn.textContent = old; btn.disabled = false; });
+  }
+  $('#q').addEventListener('input', render);
+  fetch('catalog.json', { cache:'no-store' }).then(function(r){ return r.json(); }).then(function(c){ beats = (c.beats||[]).filter(function(b){ return !b.sold_exclusive; }); render(); if (location.hash) { var el=$(location.hash); if (el) el.scrollIntoView(); } })
+    .catch(function(){ $('#list').innerHTML = '<div class="empty">Catalog is loading — refresh in a second.</div>'; });
+})();
+</script>
+</body>
+</html>
