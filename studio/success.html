@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order confirmed — Soberbby Studio</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  :root{ --deep:#04100D; --deeper:#020806; --surface:#0A1F1A; --surface-2:#0D2620; --emerald:#2BD9A4; --sand:#E9DFC8; --sand-dim:#8FA098; --line:rgba(233,223,200,.13);
+         --font-body:"Archivo","Helvetica Neue",sans-serif; --font-display:"Big Shoulders Display","Arial Narrow",sans-serif; --font-mono:"Space Mono","Courier New",monospace; }
+  *{box-sizing:border-box} body{margin:0;background:var(--deep);color:var(--sand);font-family:var(--font-body);line-height:1.5}
+  .wrap{max-width:820px;margin:0 auto;padding:40px clamp(18px,5vw,56px) 80px}
+  .mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--sand);margin-bottom:34px}
+  .sb{width:36px;height:36px;border:2px solid var(--emerald);border-radius:9px;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--emerald)}
+  .brand{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:.06em;text-transform:uppercase} .brand b{color:var(--emerald)}
+  h1{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,9vw,84px);line-height:.92;text-transform:uppercase;margin:0 0 10px}
+  .sub{color:var(--sand-dim);margin:0 0 24px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px}
+  .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-dim);margin-top:12px} .v{font-size:16px;font-weight:600;word-break:break-word}
+  .dl{display:flex;flex-direction:column;gap:10px}
+  .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--sand);text-decoration:none;font-weight:600}
+  .btn.primary{background:var(--emerald);border-color:var(--emerald);color:var(--deeper)} .btn small{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+  ol{color:var(--sand-dim);padding-left:20px} ol li{margin:6px 0} .muted{color:var(--sand-dim);font-size:14px} .err{border-color:#c22a40}
+</style>
+</head>
+<body><div class="wrap">
+  <a class="mark" href="./"><span class="sb">SB</span><span class="brand">Soberbby <b>Studio</b></span></a>
+  <div id="app"><h1>One sec…</h1><p class="sub">Confirming your payment with Stripe.</p></div>
+</div>
+<script>
+(function(){
+  var FN = 'https://joaqxkymryeggcxfnius.supabase.co/functions/v1/studio-downloads';
+  var app = document.getElementById('app');
+  var sid = new URLSearchParams(location.search).get('session_id');
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  if (!sid) { app.innerHTML = '<h1>No order here</h1><p class="sub">Open the link from your Stripe receipt, or <a href="./">go back</a>.</p>'; return; }
+  fetch(FN + '?session_id=' + encodeURIComponent(sid)).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); }).then(function(x){
+    var o = x.j;
+    if (!x.ok && !o.kind) throw new Error(o.error || 'could not verify the order');
+    var short = (o.order||'').slice(-8).toUpperCase();
+    if (o.kind === 'product') {
+      if (!o.downloads) throw new Error(o.error || 'files not available yet');
+      app.innerHTML = '<h1>It’s yours.</h1><p class="sub">Links live for 60 minutes. Your Stripe receipt has the order id if you ever need them re-issued.</p>'
+        + '<div class="card"><div class="dl">' + o.downloads.map(function(f,i){ return '<a class="btn'+(i===0?' primary':'')+'" href="'+f.url+'"><span>'+esc(f.title)+'</span><small>download</small></a>'; }).join('') + '</div></div>'
+        + '<div class="card"><div class="k">How to load</div><div class="v" style="font-weight:400;color:var(--sand-dim);font-size:14px">Unzip → copy the .fst files into <code>Documents\\Image-Line\\FL Studio\\Presets\\Mixer presets</code> → Mixer → track name arrow → “Open mixer track state”. README and CHAINS.txt are in the zip.</div></div>';
+      return;
+    }
+    var it = o.intake || {};
+    app.innerHTML = '<h1>Got it.</h1><p class="sub">'+esc(o.service.name)+' · order '+short+'. Turnaround: <b>'+esc(o.service.turnaround)+'</b>. Revisions: '+esc(o.service.revisions)+'.</p>'
+      + '<div class="card"><div class="k">Files</div><div class="v">'+esc(it.files||'—')+'</div><div class="k">Artist + song</div><div class="v">'+esc(it.song||'—')+'</div><div class="k">Notes / reference</div><div class="v">'+esc(it.notes||'—')+'</div><div class="k">Delivery email</div><div class="v">'+esc(o.email||'—')+'</div></div>'
+      + '<div class="card"><div class="k">What happens now</div><ol><li>SB gets your order on his phone within 15 minutes and pulls your files from the link above.</li><li>If a file is missing or the link is locked, you get a message at '+esc(o.email||'your email')+' before the clock starts.</li><li>Your mix arrives as a download link at that email, with the master and the mix WAV.</li><li>Reply with what you hear; revisions come back within 24 hours.</li></ol><p class="muted">Forgot the link? Send it to <a href="https://instagram.com/SBdabiggest">@SBdabiggest</a> with order '+short+'.</p></div>';
+  }).catch(function(err){ app.innerHTML = '<h1>Hmm.</h1><p class="sub">'+esc(err.message)+'</p><div class="card err"><p class="muted">If you just paid, wait a few seconds and refresh. If it keeps failing, DM <a href="https://instagram.com/SBdabiggest">@SBdabiggest</a> with your Stripe receipt — nothing is lost, the payment is recorded.</p></div>'; });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soberbby Studio — online mixing &amp; mastering, vocal tuning, vocal chains</title>
+<meta name="description" content="Vocals recorded, tuned, mixed and mastered by an engineer who does this every week in Destin, FL. Mix + master from $100, 48-hour turnaround. Vocal chain presets for FL Studio.">
+<meta property="og:title" content="Soberbby Studio — mix + master from $100">
+<meta property="og:description" content="Send your files, get a release-ready record back in 48 hours. Hear the before/after.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+  :root{ --deep:#04100D; --deeper:#020806; --surface:#0A1F1A; --surface-2:#0D2620; --emerald:#2BD9A4; --emerald-deep:#0E7C5C; --sand:#E9DFC8; --sand-dim:#8FA098; --line:rgba(233,223,200,.13);
+         --font-body:"Archivo","Helvetica Neue",sans-serif; --font-display:"Big Shoulders Display","Arial Narrow",sans-serif; --font-mono:"Space Mono","Courier New",monospace; --pad:clamp(18px,5vw,56px); }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--deep);color:var(--sand);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--emerald)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad)}
+  header.top{position:sticky;top:0;z-index:5;background:rgba(4,16,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .mark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--sand)}
+  .sb{width:36px;height:36px;border:2px solid var(--emerald);border-radius:9px;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--emerald)}
+  .brand{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:.06em;text-transform:uppercase} .brand b{color:var(--emerald)}
+  nav a{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand-dim);text-decoration:none;margin-left:18px} nav a:hover{color:var(--sand)}
+  .hero{padding:72px 0 44px;background:radial-gradient(900px 500px at 80% 0%,rgba(43,217,164,.16),transparent 60%)}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald)}
+  h1{font-family:var(--font-display);font-weight:900;font-size:clamp(52px,10vw,120px);line-height:.9;letter-spacing:-.01em;text-transform:uppercase;margin:12px 0 18px;text-wrap:balance} h1 b{color:var(--emerald)}
+  .lede{max-width:64ch;color:var(--sand-dim);font-size:17px} .lede b{color:var(--sand)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--sand);font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+  .btn.primary{background:var(--emerald);border-color:var(--emerald);color:var(--deeper);font-weight:700} .btn:hover{filter:brightness(1.08)} .btn[disabled]{opacity:.5;cursor:wait}
+  .proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sand-dim)} .proof b{color:var(--sand)}
+  .sec{padding:44px 0 10px}
+  h2{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,6vw,56px);letter-spacing:.02em;text-transform:uppercase;margin:0 0 8px}
+  .sub{color:var(--sand-dim);margin:0 0 22px;max-width:70ch}
+  /* A/B player */
+  .ab{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;grid-template-columns:1fr;gap:14px}
+  .ab .row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .ab .sw{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .ab .sw button{border:0;background:var(--surface-2);color:var(--sand-dim);padding:12px 18px;font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+  .ab .sw button.on{background:var(--emerald);color:var(--deeper);font-weight:700}
+  .play{width:44px;height:44px;border-radius:50%;border:0;background:var(--emerald);color:var(--deeper);font-size:16px;cursor:pointer;display:grid;place-items:center;flex:none}
+  .bar{flex:1;min-width:160px;height:6px;background:var(--surface-2);border-radius:6px;overflow:hidden;cursor:pointer} .bar i{display:block;height:100%;width:0;background:var(--emerald)}
+  .ab .cap{font-family:var(--font-mono);font-size:12px;color:var(--sand-dim);letter-spacing:.06em}
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px}
+  .card.hi{border-color:var(--emerald);box-shadow:0 0 0 1px rgba(43,217,164,.25) inset}
+  .card .n{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-dim)}
+  .card .p{font-family:var(--font-display);font-weight:900;font-size:44px;line-height:1} .card .p small{font-size:16px;font-family:var(--font-mono);color:var(--sand-dim);font-weight:400;margin-left:6px}
+  .card .d{color:var(--sand-dim);font-size:14px;flex:1}
+  .card .t{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;counter-reset:s}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--sand-dim);font-size:14px}
+  .step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--emerald);color:var(--deeper);font-family:var(--font-mono);font-weight:700;margin-bottom:8px}
+  .step b{color:var(--sand);display:block;margin-bottom:4px}
+  .faq details{border-top:1px solid var(--line);padding:14px 0} .faq summary{cursor:pointer;font-weight:600;list-style:none} .faq summary::-webkit-details-marker{display:none} .faq p{color:var(--sand-dim);margin:8px 0 0;max-width:70ch}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:28px 0 60px;color:var(--sand-dim);font-size:14px} footer .row{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);padding:12px 16px;border-radius:12px;font-size:14px;display:none;z-index:9}
+  @media (max-width:560px){ nav{display:none} }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="#"><span class="sb">SB</span><span class="brand">Soberbby <b>Studio</b></span></a>
+  <nav><a href="#hear">Before / after</a><a href="#services">Services</a><a href="#presets">Vocal chains</a><a href="#faq">FAQ</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">Online mixing · Destin, Florida · 850</div>
+  <h1>Your vocals,<br><b>finished.</b></h1>
+  <p class="lede">Send your recorded vocals and the beat. You get back a tuned, mixed, mastered record in <b>48 hours</b>, with two revision rounds, from an engineer who records, mixes and masters artists every week in his own studio. <b>No AI mastering, no assistant, no queue.</b> I do it.</p>
+  <div class="cta-row"><a class="btn primary" href="#services">Mix + master · $100</a><a class="btn" href="#hear">Hear a before / after</a></div>
+  <div class="proof"><span><b>5 yrs</b> paid sessions</span><span><b>280+</b> sessions on disk</span><span><b>UAD · Slate · SSL · Antares · iZotope · Melodyne</b></span><span><b>48h</b> turnaround</span></div>
+</div></section>
+
+<section class="sec" id="hear"><div class="wrap">
+  <h2>Before / after</h2>
+  <p class="sub">Same take, same beat, same eight seconds. Flip the switch while it plays. Nothing was re-recorded; only the engineering changed.</p>
+  <div class="ab" id="ab" data-raw="assets/ab/coast-raw.mp3" data-mixed="assets/ab/coast-mixed.mp3">
+    <div class="row">
+      <button class="play" id="abplay" aria-label="Play">▶</button>
+      <div class="sw"><button data-ab="raw" class="on">Raw</button><button data-ab="mixed">Mixed + mastered</button></div>
+      <div class="bar" id="abbar"><i></i></div>
+    </div>
+    <div class="cap" id="abcap">“Coast to Coast” — Soberbby · lead vocal, raw vs. mixed</div>
+  </div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap">
+  <h2>Services</h2>
+  <p class="sub">Pay, paste a link to your files on the checkout page (Drive, WeTransfer, Dropbox), and the clock starts when they arrive. Prices are per song.</p>
+  <div class="grid" id="services-grid"></div>
+  <div class="steps" style="margin-top:14px">
+    <div class="step"><b>Pay + paste your link</b>Stripe checkout asks for your file link, artist + song, and a reference track.</div>
+    <div class="step"><b>I mix on your beat</b>Tuning, EQ, compression, effects, automation — by hand, on the same chains I use for paying clients.</div>
+    <div class="step"><b>Master + deliver</b>A loud, clean, streaming-ready master and the mix WAV land in your inbox within the turnaround.</div>
+    <div class="step"><b>Revisions</b>Two rounds included on mixes. Tell me what you hear; I fix it, not argue it.</div>
+  </div>
+</div></section>
+
+<section class="sec" id="presets"><div class="wrap">
+  <h2>Vocal chains</h2>
+  <p class="sub">The exact FL Studio mixer-track chains I saved out of paid sessions over five years. Load one on your vocal, match the input gain, print. Instant download.</p>
+  <div class="grid" id="products-grid"></div>
+</div></section>
+
+<section class="sec faq" id="faq"><div class="wrap">
+  <h2>FAQ</h2>
+  <details open><summary>What do I send?</summary><p>Your vocal tracks as WAV (lead, doubles, ad-libs — dry, no effects, from the start of the song), the beat as WAV or high-quality MP3, and one reference song you want it to feel like. Zip them, upload to Drive/WeTransfer/Dropbox, paste the link at checkout.</p></details>
+  <details><summary>How fast?</summary><p>Mix + master: 48 hours from when your files arrive. Same-day is a separate option (files in before 2pm Central). Tuning and mastering alone: 24 hours.</p></details>
+  <details><summary>Do I own the result?</summary><p>Yes. You own your song and the delivered files. I keep the right to use short before/after snippets as examples unless you ask me not to on the order.</p></details>
+  <details><summary>Revisions and refunds?</summary><p>Mixes include two revision rounds; tuning and masters include one. If I can’t make it right, the order is refunded before delivery. After delivery, sales are final.</p></details>
+  <details><summary>Who is mixing?</summary><p>Soberbby — Jaden Hogan, an engineer and artist from Destin, Florida, recording and mixing artists out of his own room every week. Not a marketplace, not a team, not AI.</p></details>
+</div></section>
+
+<footer><div class="wrap"><div class="row">
+  <div>© <span id="year"></span> Soberbby Studio · Destin, FL</div>
+  <div><a href="https://instagram.com/SBdabiggest" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@soberbby" target="_blank" rel="noopener">TikTok</a> · <a href="https://open.spotify.com/artist/3r9ekqqPpnD6QkaVnHWXSV" target="_blank" rel="noopener">Spotify</a></div>
+</div></div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  // ---- CONFIG (mirror of catalog/settings.json — edit both) ----
+  var CHECKOUT_FN = 'https://joaqxkymryeggcxfnius.supabase.co/functions/v1/studio-checkout';
+  var SERVICES = [
+    { id:'mix-master',      name:'Mix + Master',            price:100, t:'48 hours',              d:'Full vocal mix on your beat + a release-ready master. 2 revision rounds. The one most people need.', hi:true },
+    { id:'mix-master-rush', name:'Mix + Master · same day', price:150, t:'today · files by 2pm CT', d:'Same as Mix + Master, delivered today.' },
+    { id:'vocal-tuning',    name:'Vocal tuning only',       price:40,  t:'24 hours',              d:'Auto-Tune / Melodyne pass on lead + doubles. You keep your own mix.' },
+    { id:'master-only',     name:'Master only',             price:35,  t:'24 hours',              d:'Your finished mix, made loud and clean for streaming. 1 revision.' }
+  ];
+  var PRODUCTS = [
+    { id:'vocal-chains-fl', name:'Soberbby Vocal Chains · FL Studio', price:24.99, t:'23 presets · instant download', d:'Mixer-track chains from real paid sessions (BRADY, FIZZ, Travis-style, Drake-ish, soul…). README + chain list inside. Some chains use Antares/Slate/UAD — noted per chain.' }
+  ];
+  var $ = function(s, el){ return (el||document).querySelector(s); };
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toast = function(m){ var t=$('#toast'); t.textContent=m; t.style.display='block'; clearTimeout(t._h); t._h=setTimeout(function(){t.style.display='none';},3600); };
+  function card(x, kind){ return '<div class="card'+(x.hi?' hi':'')+'"><div class="n">'+x.name+'</div><div class="p">$'+x.price+'<small>'+(kind==='service'?'/ song':'')+'</small></div><div class="t">'+x.t+'</div><div class="d">'+x.d+'</div><button class="btn'+(x.hi?' primary':'')+'" data-buy="'+x.id+'">'+(kind==='service'?'Book it':'Buy')+'</button></div>'; }
+  $('#services-grid').innerHTML = SERVICES.map(function(s){ return card(s,'service'); }).join('');
+  $('#products-grid').innerHTML = PRODUCTS.map(function(p){ return card(p,'product'); }).join('');
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-buy]'); if (!b) return;
+    var old = b.textContent; b.textContent = 'Opening checkout…'; b.disabled = true;
+    fetch(CHECKOUT_FN, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ item: b.getAttribute('data-buy') }) })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(x){ if (x.ok && x.j.url) location.href = x.j.url; else throw new Error(x.j.error || 'checkout unavailable'); })
+      .catch(function(err){ toast('Checkout: '+err.message+' — DM @SBdabiggest and we do it by hand'); b.textContent = old; b.disabled = false; });
+  });
+
+  // ---- A/B player: two synced <audio> elements, switch = swap which one is audible ----
+  var ab = $('#ab'), raw = new Audio(ab.getAttribute('data-raw')), mixed = new Audio(ab.getAttribute('data-mixed')), cur = 'raw';
+  raw.preload = mixed.preload = 'auto'; mixed.volume = 0;
+  var playBtn = $('#abplay'), bar = $('#abbar'), fill = $('#abbar i');
+  function setAB(which){ cur = which; raw.volume = which==='raw'?1:0; mixed.volume = which==='mixed'?1:0; document.querySelectorAll('[data-ab]').forEach(function(x){ x.classList.toggle('on', x.getAttribute('data-ab')===which); }); }
+  document.querySelectorAll('[data-ab]').forEach(function(x){ x.addEventListener('click', function(){ setAB(x.getAttribute('data-ab')); }); });
+  playBtn.addEventListener('click', function(){ if (raw.paused) { mixed.currentTime = raw.currentTime; raw.play(); mixed.play(); playBtn.textContent='❚❚'; } else { raw.pause(); mixed.pause(); playBtn.textContent='▶'; } });
+  raw.addEventListener('timeupdate', function(){ if (raw.duration) fill.style.width = (raw.currentTime/raw.duration*100)+'%'; if (Math.abs(mixed.currentTime-raw.currentTime) > .08) mixed.currentTime = raw.currentTime; });
+  raw.addEventListener('ended', function(){ mixed.pause(); playBtn.textContent='▶'; raw.currentTime = 0; mixed.currentTime = 0; fill.style.width='0'; });
+  bar.addEventListener('click', function(e){ if (!raw.duration) return; var r = bar.getBoundingClientRect(); var t = (e.clientX-r.left)/r.width*raw.duration; raw.currentTime = t; mixed.currentTime = t; });
+})();
+</script>
+</body>
+</html>
