@@ -1,0 +1,12 @@
+Birrieria Spot — text templates (copy, swap the name)
+
+REVIEW ASK (send within a few hours of finishing every job):
+Hey [name], thanks for letting Birrieria Spot take care of your order today! If you were happy with it, a quick 5-star Google review is the biggest way you can help a local business, takes about a minute: https://sbdabiggest.github.io/sb-site-drafts/birrieria-spot/review/ 🙏
+
+REFERRAL P.S. (add to the happy ones):
+P.S. Refer a friend and you BOTH get $5 off. Send them our way (or text us their name & number) and have them mention you when they book: https://sbdabiggest.github.io/sb-site-drafts/birrieria-spot/refer/
+
+REFERRER NUDGE (when the friend's job is done):
+Your friend [x] just got taken care of — you've got $5 off your next one, on us. 🙌
+
+Never gate reviews (asking only happy customers) — it violates Google + FTC rules. Ask everyone the same way.
