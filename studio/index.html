@@ -64,29 +64,18 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="mark" href="#"><span class="sb">SB</span><span class="brand">Soberbby <b>Studio</b></span></a>
-  <nav><a href="#hear">Before / after</a><a href="#services">Services</a><a href="#presets">Vocal chains</a><a href="#faq">FAQ</a></nav>
+  <nav><a href="#services">Services</a><a href="#presets">Vocal chains</a><a href="#faq">FAQ</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
   <div class="eyebrow">Online mixing · Destin, Florida · 850</div>
   <h1>Your vocals,<br><b>finished.</b></h1>
   <p class="lede">Send your recorded vocals and the beat. You get back a tuned, mixed, mastered record in <b>48 hours</b>, with two revision rounds, from an engineer who records, mixes and masters artists every week in his own studio. <b>No AI mastering, no assistant, no queue.</b> I do it.</p>
-  <div class="cta-row"><a class="btn primary" href="#services">Mix + master · $100</a><a class="btn" href="#hear">Hear a before / after</a></div>
+  <div class="cta-row"><a class="btn primary" href="#services">Mix + master · $100</a></div>
   <div class="proof"><span><b>5 yrs</b> paid sessions</span><span><b>280+</b> sessions on disk</span><span><b>UAD · Slate · SSL · Antares · iZotope · Melodyne</b></span><span><b>48h</b> turnaround</span></div>
 </div></section>
 
-<section class="sec" id="hear"><div class="wrap">
-  <h2>Before / after</h2>
-  <p class="sub">Same take, same beat, same eight seconds. Flip the switch while it plays. Nothing was re-recorded; only the engineering changed.</p>
-  <div class="ab" id="ab" data-raw="assets/ab/coast-raw.mp3" data-mixed="assets/ab/coast-mixed.mp3">
-    <div class="row">
-      <button class="play" id="abplay" aria-label="Play">▶</button>
-      <div class="sw"><button data-ab="raw" class="on">Raw</button><button data-ab="mixed">Mixed + mastered</button></div>
-      <div class="bar" id="abbar"><i></i></div>
-    </div>
-    <div class="cap" id="abcap">“Coast to Coast” — Soberbby · lead vocal, raw vs. mixed</div>
-  </div>
-</div></section>
+<!-- Before/after section removed 2026-09-14. -->
 
 <section class="sec" id="services"><div class="wrap">
   <h2>Services</h2>
@@ -149,16 +138,6 @@
       .catch(function(err){ toast('Checkout: '+err.message+' — DM @SBdabiggest and we do it by hand'); b.textContent = old; b.disabled = false; });
   });
 
-  // ---- A/B player: two synced <audio> elements, switch = swap which one is audible ----
-  var ab = $('#ab'), raw = new Audio(ab.getAttribute('data-raw')), mixed = new Audio(ab.getAttribute('data-mixed')), cur = 'raw';
-  raw.preload = mixed.preload = 'auto'; mixed.volume = 0;
-  var playBtn = $('#abplay'), bar = $('#abbar'), fill = $('#abbar i');
-  function setAB(which){ cur = which; raw.volume = which==='raw'?1:0; mixed.volume = which==='mixed'?1:0; document.querySelectorAll('[data-ab]').forEach(function(x){ x.classList.toggle('on', x.getAttribute('data-ab')===which); }); }
-  document.querySelectorAll('[data-ab]').forEach(function(x){ x.addEventListener('click', function(){ setAB(x.getAttribute('data-ab')); }); });
-  playBtn.addEventListener('click', function(){ if (raw.paused) { mixed.currentTime = raw.currentTime; raw.play(); mixed.play(); playBtn.textContent='❚❚'; } else { raw.pause(); mixed.pause(); playBtn.textContent='▶'; } });
-  raw.addEventListener('timeupdate', function(){ if (raw.duration) fill.style.width = (raw.currentTime/raw.duration*100)+'%'; if (Math.abs(mixed.currentTime-raw.currentTime) > .08) mixed.currentTime = raw.currentTime; });
-  raw.addEventListener('ended', function(){ mixed.pause(); playBtn.textContent='▶'; raw.currentTime = 0; mixed.currentTime = 0; fill.style.width='0'; });
-  bar.addEventListener('click', function(e){ if (!raw.duration) return; var r = bar.getBoundingClientRect(); var t = (e.clientX-r.left)/r.width*raw.duration; raw.currentTime = t; mixed.currentTime = t; });
 })();
 </script>
 </body>
