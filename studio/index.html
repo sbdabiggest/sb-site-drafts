@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soberbby Studio — online mixing &amp; mastering, vocal tuning, vocal chains</title>
-<meta name="description" content="Vocals recorded, tuned, mixed and mastered by an engineer who does this every week in Destin, FL. Mix + master from $100, 48-hour turnaround. Vocal chain presets for FL Studio.">
+<title>Soberbby Studio — online mixing &amp; mastering, vocal tuning</title>
+<meta name="description" content="Vocals recorded, tuned, mixed and mastered by an engineer who does this every week in Destin, FL. Mix + master from $100, 48-hour turnaround.">
 <meta property="og:title" content="Soberbby Studio — mix + master from $100">
-<meta property="og:description" content="Send your files, get a release-ready record back in 48 hours. Hear the before/after.">
+<meta property="og:description" content="Send your files, get a release-ready record back in 48 hours. Mixed by hand, not AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap">
@@ -64,7 +64,7 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="mark" href="#"><span class="sb">SB</span><span class="brand">Soberbby <b>Studio</b></span></a>
-  <nav><a href="#services">Services</a><a href="#presets">Vocal chains</a><a href="#faq">FAQ</a></nav>
+  <nav><a href="#services">Services</a><a href="#faq">FAQ</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
@@ -89,11 +89,13 @@
   </div>
 </div></section>
 
-<section class="sec" id="presets"><div class="wrap">
-  <h2>Vocal chains</h2>
-  <p class="sub">The exact FL Studio mixer-track chains I saved out of paid sessions over five years. Load one on your vocal, match the input gain, print. Instant download.</p>
-  <div class="grid" id="products-grid"></div>
-</div></section>
+<!-- Vocal chains section pulled 2026-09-28 (SB: "pull it"). The preset zip was never uploaded to the
+     sb-products bucket (checked 2026-09-28: soberbby-studio/.env is absent, so tools/pack-presets.mjs has never
+     run its upload step), so a buyer would have paid and then got an error on the download page. To restore:
+     put the service_role key in soberbby-studio/.env and run tools/pack-presets.mjs (it uploads the zip); then
+     restore this whole file from the commit before the 2026-09-28 pull (see `git log -- soberbby-studio/site/index.html`)
+     in one shot, re-add 'vocal-chains-fl' to ITEMS in supabase/functions/studio-checkout/index.ts and redeploy that
+     function, check the download on a $0 test order, and run `node tools/deploy-site.mjs`. -->
 
 <section class="sec faq" id="faq"><div class="wrap">
   <h2>FAQ</h2>
@@ -120,15 +122,12 @@
     { id:'vocal-tuning',    name:'Vocal tuning only',       price:40,  t:'24 hours',              d:'Auto-Tune / Melodyne pass on lead + doubles. You keep your own mix.' },
     { id:'master-only',     name:'Master only',             price:35,  t:'24 hours',              d:'Your finished mix, made loud and clean for streaming. 1 revision.' }
   ];
-  var PRODUCTS = [
-    { id:'vocal-chains-fl', name:'Soberbby Vocal Chains · FL Studio', price:24.99, t:'23 presets · instant download', d:'Mixer-track chains from real paid sessions (BRADY, FIZZ, Travis-style, Drake-ish, soul…). README + chain list inside. Some chains use Antares/Slate/UAD — noted per chain.' }
-  ];
+  // PRODUCTS (the vocal-chains pack) pulled 2026-09-28 with its section; see the comment above #faq.
   var $ = function(s, el){ return (el||document).querySelector(s); };
   document.getElementById('year').textContent = new Date().getFullYear();
   var toast = function(m){ var t=$('#toast'); t.textContent=m; t.style.display='block'; clearTimeout(t._h); t._h=setTimeout(function(){t.style.display='none';},3600); };
   function card(x, kind){ return '<div class="card'+(x.hi?' hi':'')+'"><div class="n">'+x.name+'</div><div class="p">$'+x.price+'<small>'+(kind==='service'?'/ song':'')+'</small></div><div class="t">'+x.t+'</div><div class="d">'+x.d+'</div><button class="btn'+(x.hi?' primary':'')+'" data-buy="'+x.id+'">'+(kind==='service'?'Book it':'Buy')+'</button></div>'; }
   $('#services-grid').innerHTML = SERVICES.map(function(s){ return card(s,'service'); }).join('');
-  $('#products-grid').innerHTML = PRODUCTS.map(function(p){ return card(p,'product'); }).join('');
   document.addEventListener('click', function(e){
     var b = e.target.closest('[data-buy]'); if (!b) return;
     var old = b.textContent; b.textContent = 'Opening checkout…'; b.disabled = true;
