@@ -42,13 +42,12 @@
 <section class="hero"><div class="wrap">
   <div class="eyebrow">Emerald Coast service businesses · Destin to Pensacola</div>
   <h1>The growth system behind SB Detailing, run for your business.</h1>
-  <p>A one-tap review ask every customer gets (you send one text after each job; we write it), a referral offer that pays for itself, local guides written to be the answer Google and ChatGPT give, and Google Ads kept clean every week. Built for a one-truck detailing business in Fort Walton Beach, now run monthly for yours. You do the work; we build the pages and write the texts and the guides.</p>
+  <p>A one-tap review ask every customer gets (you send one text after each job; we write it), a referral offer that pays for itself, local guides written to be the answer Google and ChatGPT give, and, on the Ads plan, Google Ads kept clean every week. Built for a one-truck detailing business in Fort Walton Beach, now run monthly for yours. You do the work; we build the pages and write the texts and the guides.</p>
   <div class="row"><a class="btn btn-b" href="#plans">See plans · from $99/mo</a><a class="btn btn-g" href="#proof">See it running live</a></div>
   <div class="proof" id="proof">
     <a href="https://sbdetailing850.autos/resources/" target="_blank" rel="noopener"><b>Live · guides hub</b><span>13 local guides built from real customer questions</span></a>
-    <a href="https://sbdetailing850.autos/review/" target="_blank" rel="noopener"><b>Live · review page</b><span>The one-tap review page texted after every job</span></a>
+    <a href="https://sbdetailing850.autos/review/" target="_blank" rel="noopener"><b>Live · review page</b><span>The one-tap review page SB texts customers after a job</span></a>
     <a href="https://sbdetailing850.autos/refer/" target="_blank" rel="noopener"><b>Live · referral offer</b><span>$25 / $25 referral program with no app and no backend</span></a>
-    <a href="https://sbdetailing850.autos/" target="_blank" rel="noopener"><b>Live · the site</b><span>Google Ads at a click cap with 50+ negative keywords, verified</span></a>
   </div>
 </div></section>
 
@@ -102,7 +101,7 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
   var toast = function(m){ var t=document.getElementById('toast'); t.textContent=m; t.style.display='block'; clearTimeout(t._h); t._h=setTimeout(function(){t.style.display='none';},3600); };
   document.getElementById('plans-grid').innerHTML = PLANS.map(function(p){ return '<div class="plan'+(p.hi?' hi':'')+'"><div class="n">'+p.name+(p.tag?' · <span class="tag">'+p.tag+'</span>':'')+'</div><div class="p">$'+p.price+'<small>/mo</small></div><ul>'+p.items.map(function(i){return '<li>'+i+'</li>';}).join('')+'</ul><button class="btn '+(p.hi?'btn-b':'btn-w')+'" data-plan="'+p.id+'">Start '+p.name+'</button></div>'; }).join('')
-    + '<div class="plan"><div class="n">Add-ons</div><div class="p">$250<small> once</small></div><ul><li>One-page website you own (intro rate)</li><li>Live in a week, mobile-first</li></ul><button class="btn btn-w" data-plan="site-build">Get the site</button><div class="p" style="margin-top:14px">$250<small> once</small></div><ul><li>Google profile tune-up</li><li>Categories, services, description, photos, Q&amp;A</li><li>Done within a week. No ranking promises</li></ul><button class="btn btn-w" data-plan="gbp-tuneup">Get the tune-up</button></div>';
+    + '<div class="plan"><div class="n">Add-ons</div><div class="p">$250<small> once</small></div><ul><li>One-page website you own (intro rate)</li><li>Live in a week, mobile-first</li></ul><button class="btn btn-w" data-plan="site-build">Get the site</button><div class="p" style="margin-top:14px">$250<small> once</small></div><ul><li>Google profile tune-up</li><li>Categories, services, description, photos</li><li>Done within a week. No ranking promises</li></ul><button class="btn btn-w" data-plan="gbp-tuneup">Get the tune-up</button></div>';
   document.addEventListener('click', function(e){
     var b = e.target.closest('[data-plan]'); if (!b) return;
     var old = b.textContent; b.textContent = 'Opening checkout…'; b.disabled = true;
